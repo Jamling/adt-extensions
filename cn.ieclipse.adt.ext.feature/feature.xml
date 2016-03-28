@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="cn.ieclipse.adt.ext.feature"
-      label="Android ADT extensions feature"
+      label="Android ADT extensions"
       version="4.0.0"
       provider-name="%providerName">
 
