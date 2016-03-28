@@ -29,7 +29,7 @@ import cn.ieclipse.adt.ext.helpers.Status;
 public class AormPlugin extends AbstractUIPlugin {
 
     // The plug-in ID
-    public static final String PLUGIN_ID = "cn.ieclipse.aorm.eclipse"; //$NON-NLS-1$
+    public static final String PLUGIN_ID = "cn.ieclipse.adt.ext"; //$NON-NLS-1$
 
     // The shared instance
     private static AormPlugin plugin;

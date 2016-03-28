@@ -135,7 +135,7 @@ public class TipShell extends Shell {
                 }
             }
         });
-        tbClose.setImage(ResourceManager.getPluginImage(AormPlugin.PLUGIN_ID, "res/delete.png"));
+        tbClose.setImage(ResourceManager.getPluginImage(AormPlugin.PLUGIN_ID, "/res/delete.png"));
         tbClose.setToolTipText("Close");
 
         setSize(300, 180);
