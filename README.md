@@ -16,7 +16,7 @@ Main function list:
   - Click "Install"
 
 ## Tutorial
- ### New Activity
+### New Activity
   -  Choose a package right click and select "New->Others" in popups menu.
   -  Select New Activity under Android category.(If you work in java perspective, New Activity would be visible popups menu.) to open wizard page.
   -  Check "with super suffix" to add super suffix to type name.(such with a Activity suffix)
@@ -38,7 +38,7 @@ Main function list:
 
 ## Screenshot
 
-see ![screen shot](https://Jamling.github.com/adt-extensions/wiki/Screenshot>).
+![screen shot](https://marketplace.eclipse.org/sites/default/files/aorm_elcipse_2.png)
 
 ## Reference
 
