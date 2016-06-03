@@ -92,17 +92,12 @@ import cn.ieclipse.adt.ext.helpers.ProjectHelper;
  * 
  */
 public class EditComponentWizardPage extends WizardPage {
-    private static Image ADD_IMG = ResourceManager.getPluginImage(
-            AormPlugin.PLUGIN_ID, "res/add.png");
+    private static Image ADD_IMG = AormPlugin.getImage(ImageConstants.ACTION_ADD);
 
-    private static Image DEL_IMG = ResourceManager.getPluginImage(
-            AormPlugin.PLUGIN_ID, "res/delete.png");
-    private static Image UP_IMG = ResourceManager.getPluginImage(
-            AormPlugin.PLUGIN_ID, "res/up.png");
-    private static Image DOWN_IMG = ResourceManager.getPluginImage(
-            AormPlugin.PLUGIN_ID, "res/down.png");
-    private static Image CLASS_IMG = ResourceManager.getPluginImage(
-            AormPlugin.PLUGIN_ID, "res/class.gif");
+    private static Image DEL_IMG = AormPlugin.getImage(ImageConstants.ACTION_DEL);
+    private static Image UP_IMG = AormPlugin.getImage(ImageConstants.ACTION_UP);
+    private static Image DOWN_IMG = AormPlugin.getImage(ImageConstants.ACTION_DOWN);
+    private static Image CLASS_IMG = AormPlugin.getImage(ImageConstants.ACTION_CLASS);
 
     protected ArrayList<ComponentAttribute> attributes = new ArrayList<ComponentAttribute>();
     private FontMetrics fontMetrics;
@@ -142,6 +137,16 @@ public class EditComponentWizardPage extends WizardPage {
     protected EditComponentWizardPage(String pageName, String title,
             ImageDescriptor titleImage) {
         super(pageName, title, titleImage);
+//        ADD_IMG = new LetterImageDescriptor('+', SWT.COLOR_GREEN, 'R').createImage(false);
+//        DEL_IMG = new LetterImageDescriptor('─', SWT.COLOR_DARK_RED, 'R').createImage(false);
+//        UP_IMG = new LetterImageDescriptor('↑', SWT.COLOR_DARK_BLUE, 'R').createImage(false);
+//        DOWN_IMG = new LetterImageDescriptor('↓', SWT.COLOR_DARK_BLUE, 'R').createImage(false);
+//        ADD_IMG = AormPlugin.getImageDescriptor(
+//                ImageConstants.ACTION_ADD).createImage();
+//        DEL_IMG = SWTResourceManager.getImage(ImageConstants.ACTION_DEL);
+//        UP_IMG = SWTResourceManager.getImage(ImageConstants.ACTION_UP);
+//        DOWN_IMG = SWTResourceManager.getImage(ImageConstants.ACTION_DOWN);
+//        CLASS_IMG = SWTResourceManager.getImage(ImageConstants.ACTION_CLASS);
     }
 
     public void setProject(IJavaProject project) {
@@ -645,7 +650,7 @@ public class EditComponentWizardPage extends WizardPage {
             }
         }
         if (control != null) {
-            TipShell.enableFor(control, attr.getTip());
+            TipShell.enableFor(control, attr);
             TipShell.setNodeName(selectedNode.getNodeName());
         }
     }

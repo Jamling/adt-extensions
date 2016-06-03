@@ -40,6 +40,7 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
 
+import cn.ieclipse.adt.ext.AormPlugin;
 import cn.ieclipse.adt.ext.helpers.Status;
 import cn.ieclipse.adt.ext.jdt.JavaSelection;
 import cn.ieclipse.adt.ext.jdt.SourceAnalysis;
@@ -128,11 +129,11 @@ public class NewOrmProviderWizardPage extends NewProviderWizardPage {
 
         TableColumn tableCol = new TableColumn(table, SWT.NONE);
         tableCol.setText("Table");
-        // tableCol.setImage(AormPlugin.getImageDescriptor("res/table.png").createImage());
+        tableCol.setImage(AormPlugin.getImage("res/table.png"));
 
         TableColumn typeCol = new TableColumn(table, SWT.NONE);
         typeCol.setText("Class");
-        // typeCol.setImage(AormPlugin.getImageDescriptor("res/class.gif").createImage());
+        typeCol.setImage(AormPlugin.getImage("res/class.gif"));
 
         for (final TypeMapping type : mapList) {
             final TableItem ti = new TableItem(table, SWT.NONE);

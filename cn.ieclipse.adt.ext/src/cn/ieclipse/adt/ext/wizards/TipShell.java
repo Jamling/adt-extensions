@@ -160,6 +160,7 @@ public class TipShell extends Shell {
             e.printStackTrace();
         } catch (Exception e) {
             // TODO: handle exception
+            e.printStackTrace();
         }
     }
 
@@ -202,6 +203,7 @@ public class TipShell extends Shell {
                     if ((tip == null || tip.isDisposed())) {
                         tip = new TipShell(widget.getShell());
                     }
+                    tip.attr = attr;
                     widget.setFocus();
                     
                     // tip.text.setText(attr.getTip());

@@ -16,7 +16,10 @@
 package cn.ieclipse.adt.ext;
 
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.wb.swt.ResourceManager;
+import org.eclipse.wb.swt.SWTResourceManager;
 import org.osgi.framework.BundleContext;
 
 import cn.ieclipse.adt.ext.helpers.Status;
@@ -27,43 +30,41 @@ import cn.ieclipse.adt.ext.helpers.Status;
  * @author Jamling
  */
 public class AormPlugin extends AbstractUIPlugin {
-
+    
     // The plug-in ID
     public static final String PLUGIN_ID = "cn.ieclipse.adt.ext"; //$NON-NLS-1$
-
+    
     // The shared instance
     private static AormPlugin plugin;
-
+    
     /**
      * The constructor
      */
     public AormPlugin() {
     }
-
+    
     /*
      * (non-Javadoc)
      * 
-     * @see
-     * org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext
-     * )
+     * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.
+     * BundleContext )
      */
     public void start(BundleContext context) throws Exception {
         super.start(context);
         plugin = this;
     }
-
+    
     /*
      * (non-Javadoc)
      * 
-     * @see
-     * org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext
-     * )
+     * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.
+     * BundleContext )
      */
     public void stop(BundleContext context) throws Exception {
         plugin = null;
         super.stop(context);
     }
-
+    
     /**
      * Returns the shared instance
      * 
@@ -72,7 +73,7 @@ public class AormPlugin extends AbstractUIPlugin {
     public static AormPlugin getDefault() {
         return plugin;
     }
-
+    
     /**
      * Returns an image descriptor for the image file at the given plug-in
      * relative path
@@ -84,7 +85,7 @@ public class AormPlugin extends AbstractUIPlugin {
     public static ImageDescriptor getImageDescriptor(String path) {
         return imageDescriptorFromPlugin(PLUGIN_ID, path);
     }
-
+    
     public static void log(int severity, String format, Object... args) {
         if (format == null) {
             return;
@@ -95,26 +96,40 @@ public class AormPlugin extends AbstractUIPlugin {
         status.setSeverity(severity);
         if (getDefault() != null) {
             getDefault().getLog().log(status);
-        } else {
-            ((severity < 4) ? System.out : System.err).println(status
-                    .toString());
+        }
+        else {
+            ((severity < 4) ? System.out : System.err)
+                    .println(status.toString());
         }
     }
-
+    
     public static void log(Throwable exception, String format, Object... args) {
         String message = null;
         if (format != null)
             message = String.format(format, args);
         else
             message = "";
-
+            
         Status status = new Status();
         status.setError(message);
         status.setException(exception);
         if (getDefault() != null) {
             getDefault().getLog().log(status);
-        } else {
+        }
+        else {
             System.err.println(status.toString());
         }
+    }
+    
+    /**
+     * Get image under plugin.
+     * 
+     * @param path
+     * @return
+     */
+    public static Image getImage(String path) {
+        // return SWTResourceManager.getImage(path);
+        return ResourceManager.getPluginImage(AormPlugin.PLUGIN_ID,
+                path.startsWith("/") ? path : "/" + path);
     }
 }

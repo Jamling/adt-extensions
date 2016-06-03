@@ -59,12 +59,9 @@ import cn.ieclipse.adt.ext.AormPlugin;
 import cn.ieclipse.adt.ext.helpers.ImageConstants;
 
 public class ElementTableSelector {
-    private static Image ADD_IMG = AormPlugin.getImageDescriptor(
-            ImageConstants.ACTION_ADD).createImage();
-    private static Image UP_IMG = AormPlugin.getImageDescriptor(
-            ImageConstants.ACTION_UP).createImage();
-    private static Image DOWN_IMG = AormPlugin.getImageDescriptor(
-            ImageConstants.ACTION_DOWN).createImage();
+    private static Image ADD_IMG = AormPlugin.getImage("res/add.png");
+    private static Image UP_IMG = AormPlugin.getImage("res/up.png");
+    private static Image DOWN_IMG = AormPlugin.getImage("res/down.png");
     private final Button addButton;
     private final Button removeButton;
     private final Object[] elements;

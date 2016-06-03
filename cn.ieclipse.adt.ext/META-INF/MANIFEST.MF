@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: cn.ieclipse.adt.ext;singleton:=true
-Bundle-Version: 4.0.0
+Bundle-Version: 4.0.1
 Bundle-Activator: cn.ieclipse.adt.ext.AormPlugin
 Bundle-Vendor: %Bundle-Vendor
 Require-Bundle: org.eclipse.ui,
@@ -15,7 +15,9 @@ Require-Bundle: org.eclipse.ui,
  com.android.ide.eclipse.adt,
  com.android.ide.eclipse.base
 Eclipse-BundleShape: dir
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: J2SE-1.5,
+ OSGi/Minimum-1.0
 Bundle-ClassPath: .,
- libs/
+ libs/,
+ res/
 Bundle-ActivationPolicy: lazy
