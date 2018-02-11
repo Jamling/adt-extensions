@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: cn.ieclipse.adt.ext;singleton:=true
-Bundle-Version: 4.0.1
+Bundle-Version: 4.0.1.qualifier
 Bundle-Activator: cn.ieclipse.adt.ext.AormPlugin
 Bundle-Vendor: %Bundle-Vendor
 Require-Bundle: org.eclipse.ui,
